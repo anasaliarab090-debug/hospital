@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Clinical Profile | SYL Healthcare</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body class="bg-slate-50">
+    <!-- Header / Navbar -->
+    <header class="navbar">
+      <div class="container mx-auto px-8 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div
+            class="bg-[var(--primary)] p-2 rounded-xl shadow-lg group-hover:rotate-12 transition-transform"
+          >
+            <i data-lucide="cross" class="text-white w-6 h-6"></i>
+          </div>
+          <span
+            class="text-2xl font-extrabold font-display logo-text text-white tracking-tight"
+          >
+            SYL<span class="text-[var(--accent)]">Healthcare</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+          <a href="management.html" class="nav-link">Management</a>
+          <a href="patients.html" class="nav-link active">Patients</a>
+          <a href="appointment.html" class="btn-primary ml-4">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Book Visit</span>
+          </a>
+        </nav>
+
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger text-white" id="hamburger-btn">
+          <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Overlay -->
+      <nav class="mobile-nav" id="mobile-menu">
+        <button class="absolute top-8 right-8 text-slate-900" id="close-btn">
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="management.html" class="nav-link">Management</a>
+        <a href="patients.html" class="nav-link">Patients</a>
+        <a href="appointment.html" class="btn-primary">Book Visit</a>
+      </nav>
+    </header>
+
+    <main class="pt-32 pb-20">
+      <div class="container mx-auto px-8">
+        <!-- Patient Header Card -->
+        <div class="card p-10 mb-10 reveal overflow-hidden relative">
+          <div
+            class="flex flex-col md:flex-row gap-10 items-center relative z-10"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200"
+              alt="Patient"
+              class="w-32 h-32 rounded-3xl object-cover shadow-xl border-4 border-slate-50"
+            />
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl font-bold text-slate-900 mb-2">
+                James Smith
+              </h1>
+              <p
+                class="text-slate-500 font-bold text-lg mb-6 flex items-center justify-center md:justify-start gap-3"
+              >
+                Patient ID: #HC-8822
+                <span
+                  class="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded"
+                  >Active</span
+                >
+              </p>
+              <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <div
+                  class="bg-slate-50 px-4 py-2 rounded-xl border border-slate-100"
+                >
+                  <p class="text-slate-400 text-[10px] font-bold uppercase">
+                    Age / Gender
+                  </p>
+                  <p class="font-bold text-slate-700">32 Y / Male</p>
+                </div>
+                <div
+                  class="bg-slate-50 px-4 py-2 rounded-xl border border-slate-100"
+                >
+                  <p class="text-slate-400 text-[10px] font-bold uppercase">
+                    Blood Type
+                  </p>
+                  <p class="font-bold text-red-600">O Positive (O+)</p>
+                </div>
+                <div
+                  class="bg-slate-50 px-4 py-2 rounded-xl border border-slate-100"
+                >
+                  <p class="text-slate-400 text-[10px] font-bold uppercase">
+                    Weight / Height
+                  </p>
+                  <p class="font-bold text-slate-700">75kg / 182cm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Abstract Bg -->
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600 rounded-full blur-3xl opacity-10"
+          ></div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- Clinical Tabs -->
+          <div class="lg:col-span-2 space-y-10">
+            <!-- Medical History Timeline -->
+            <div class="reveal delay-100">
+              <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-800">
+                  Medical History
+                </h2>
+                <button
+                  class="text-blue-600 font-bold text-sm flex items-center gap-1"
+                >
+                  <i data-lucide="plus" class="w-4 h-4"></i> Add Entry
+                </button>
+              </div>
+
+              <div class="space-y-8 relative">
+                <div
+                  class="absolute left-6 top-4 bottom-4 w-1 bg-slate-100"
+                ></div>
+
+                <!-- Hist Entry 1 -->
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-12 h-12 bg-white rounded-2xl shadow-md border border-slate-100 flex items-center justify-center text-blue-600 flex-shrink-0"
+                  >
+                    <i data-lucide="heart"></i>
+                  </div>
+                  <div class="card p-6 flex-1 hover:shadow-lg transition-all">
+                    <div class="flex justify-between mb-4">
+                      <h4 class="font-bold text-slate-800 text-lg">
+                        Hypertrophic Cardiomyopathy
+                      </h4>
+                      <span class="text-slate-400 text-xs font-bold"
+                        >12 NOV 2025</span
+                      >
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">
+                      Initial diagnosis following recurring palpitations.
+                      Prescribed beta-blockers and scheduled for quarterly
+                      follow-ups.
+                    </p>
+                    <div class="flex gap-3">
+                      <span
+                        class="bg-blue-600/10 text-blue-600 text-[10px] font-bold px-2 py-1 rounded"
+                        >CARDIOLOGY</span
+                      >
+                      <span
+                        class="bg-orange-600/10 text-orange-600 text-[10px] font-bold px-2 py-1 rounded"
+                        >CHRONIC</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hist Entry 2 -->
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-12 h-12 bg-white rounded-2xl shadow-md border border-slate-100 flex items-center justify-center text-teal-600 flex-shrink-0"
+                  >
+                    <i data-lucide="microscope"></i>
+                  </div>
+                  <div class="card p-6 flex-1 hover:shadow-lg transition-all">
+                    <div class="flex justify-between mb-4">
+                      <h4 class="font-bold text-slate-800 text-lg">
+                        Full Cardiac Profile Panel
+                      </h4>
+                      <span class="text-slate-400 text-xs font-bold"
+                        >01 DEC 2025</span
+                      >
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">
+                      Blood lipid profile, cardiac enzymes, and ECG results show
+                      stabilizing levels.
+                    </p>
+                    <button
+                      class="text-blue-600 font-bold text-xs flex items-center gap-2"
+                    >
+                      View Lab Report
+                      <i data-lucide="external-link" class="w-3 h-3"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visit Records Table -->
+            <div class="reveal delay-200">
+              <h2 class="text-2xl font-bold text-slate-800 mb-8">
+                Recent Visits
+              </h2>
+              <div class="card p-0 overflow-hidden">
+                <table class="w-full text-left">
+                  <thead class="bg-slate-50 border-b border-slate-100">
+                    <tr
+                      class="text-slate-400 text-[10px] font-bold uppercase tracking-widest"
+                    >
+                      <th class="py-4 px-8">Date</th>
+                      <th class="py-4 px-8">Reason</th>
+                      <th class="py-4 px-8">Physician</th>
+                      <th class="py-4 px-8">Report</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-50">
+                    <tr>
+                      <td class="py-5 px-8 font-bold text-slate-700">
+                        12 Dec 2025
+                      </td>
+                      <td class="py-5 px-8 text-slate-500 text-sm">
+                        Consultation
+                      </td>
+                      <td class="py-5 px-8 text-slate-700 font-medium">
+                        Dr. Julian Rossi
+                      </td>
+                      <td class="py-5 px-8">
+                        <i
+                          data-lucide="file-check"
+                          class="text-green-500 w-5 h-5"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-5 px-8 font-bold text-slate-700">
+                        01 Dec 2025
+                      </td>
+                      <td class="py-5 px-8 text-slate-500 text-sm">Lab Test</td>
+                      <td class="py-5 px-8 text-slate-700 font-medium">
+                        Dr. Sarah Jenkins
+                      </td>
+                      <td class="py-5 px-8">
+                        <i
+                          data-lucide="file-check"
+                          class="text-green-500 w-5 h-5"
+                        ></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patient Meta Sidebar -->
+          <aside class="space-y-8">
+            <!-- Emergency Info -->
+            <div class="card p-8 bg-red-600 text-white reveal delay-300">
+              <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <i data-lucide="alert-triangle"></i> Vital Info
+              </h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="text-red-200 text-xs font-bold uppercase mb-1">
+                    Drug Allergies
+                  </p>
+                  <p class="font-bold text-lg">Penicillin, Sulfa Drugs</p>
+                </div>
+                <div>
+                  <p class="text-red-200 text-xs font-bold uppercase mb-1">
+                    Emergency Contact
+                  </p>
+                  <p class="font-bold text-lg">Sarah Smith (Wife)</p>
+                  <p class="text-sm text-red-100">+1 (555) 998-0022</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ongoing Treatment -->
+            <div class="card p-8 reveal delay-400">
+              <h3 class="text-xl font-bold text-slate-900 mb-6">
+                Prescriptions
+              </h3>
+              <div class="space-y-4">
+                <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
+                  <p class="font-bold text-blue-900">Metoprolol Succinate</p>
+                  <p class="text-xs text-blue-700">25mg | Once Daily (AM)</p>
+                </div>
+                <div class="bg-teal-50 p-4 rounded-2xl border border-teal-100">
+                  <p class="font-bold text-teal-900">Aspirin Low Dose</p>
+                  <p class="text-xs text-teal-700">81mg | Once Daily</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- Professional Modern Footer -->
+    <footer
+      class="bg-slate-900 text-slate-300 pt-24 pb-12 relative overflow-hidden"
+    >
+      <!-- Decor Background -->
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 -skew-x-12 translate-x-1/2"
+      ></div>
+
+      <div class="container mx-auto px-8 relative z-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20"
+        >
+          <!-- Column 1: About -->
+          <div class="space-y-8 reveal">
+            <a href="index.html" class="flex items-center gap-2 group">
+              <div
+                class="bg-blue-600 p-2 rounded-lg shadow-lg shadow-blue-900/20 group-hover:rotate-12 transition-transform"
+              >
+                <i data-lucide="cross" class="text-white w-5 h-5"></i>
+              </div>
+              <span
+                class="text-xl font-extrabold font-display text-white tracking-tight"
+                >SYL<span class="text-blue-500">Healthcare</span></span
+              >
+            </a>
+            <p class="text-slate-400 leading-relaxed font-medium">
+              A global leader in medical excellence, combining cutting-edge
+              technology with compassionate care to provide elite healthcare
+              solutions for everyone.
+            </p>
+            <!-- Social Media Row -->
+            <div class="flex gap-4 pt-2">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all"
+              >
+                <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:-translate-y-1 transition-all"
+              >
+                <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-700 hover:-translate-y-1 transition-all"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="space-y-8 reveal delay-100">
+            <h4
+              class="text-white font-bold text-lg uppercase tracking-widest border-l-4 border-blue-600 pl-4"
+            >
+              Quick Links
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="doctors.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Our Doctors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="departments.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Specialties</a
+                >
+              </li>
+              <li>
+                <a
+                  href="appointment.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Appointments</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Support -->
+          <div class="space-y-8 reveal delay-200">
+            <h4
+              class="text-white font-bold text-lg uppercase tracking-widest border-l-4 border-teal-500 pl-4"
+            >
+              Support
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i data-lucide="shield" class="w-4 h-4 text-teal-500"></i>
+                  Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i data-lucide="file-text" class="w-4 h-4 text-teal-500"></i>
+                  Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="help-circle"
+                    class="w-4 h-4 text-teal-500"
+                  ></i>
+                  Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="phone-call"
+                    class="w-4 h-4 text-teal-500"
+                  ></i>
+                  Emergencies</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Us -->
+          <div class="space-y-8 reveal delay-300">
+            <h4
+              class="text-white font-bold text-lg uppercase tracking-widest border-l-4 border-orange-500 pl-4"
+            >
+              Contact Us
+            </h4>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500 transition-colors"
+                >
+                  <i
+                    data-lucide="map-pin"
+                    class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"
+                  ></i>
+                </div>
+                <p class="text-slate-400 font-medium leading-relaxed">
+                  123 Medical Drive, <br />
+                  Health City, HC 4022
+                </p>
+              </div>
+              <div class="flex items-start gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors"
+                >
+                  <i
+                    data-lucide="phone"
+                    class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors"
+                  ></i>
+                </div>
+                <p class="text-slate-400 font-medium tracking-tight">
+                  +1 (555) 000-1234 <br />
+                  <span class="text-xs text-slate-500 uppercase font-bold"
+                    >24/7 Support Line</span
+                  >
+                </p>
+              </div>
+              <div class="flex items-start gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center shrink-0 group-hover:bg-teal-600 transition-colors"
+                >
+                  <i
+                    data-lucide="mail"
+                    class="w-5 h-5 text-teal-600 group-hover:text-white transition-colors"
+                  ></i>
+                </div>
+                <p class="text-slate-400 font-medium whitespace-nowrap">
+                  contact@healthcareultra.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <p class="text-slate-500 font-medium text-sm">
+            © 2025
+            <span class="text-blue-600 font-bold">HealthCare Ultra</span>. All
+            rights reserved. Medical solutions for a better life.
+          </p>
+          <div class="flex gap-8 text-sm font-bold text-slate-500">
+            <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+            <a href="#" class="hover:text-white transition-colors"
+              >Accessibility</a
+            >
+            <a href="#" class="hover:text-white transition-colors">Careers</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

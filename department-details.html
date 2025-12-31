@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department Detail | SYL Healthcare</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body class="bg-slate-50 font-main">
+    <!-- Modern Redesigned Navbar (Sync with Home) -->
+    <!-- Header / Navbar -->
+    <header class="navbar">
+      <div class="container mx-auto px-8 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div
+            class="bg-[var(--primary)] p-2 rounded-xl shadow-lg group-hover:rotate-12 transition-transform"
+          >
+            <i data-lucide="cross" class="text-white w-6 h-6"></i>
+          </div>
+          <span
+            class="text-2xl font-extrabold font-display logo-text text-white tracking-tight"
+          >
+            SYL<span class="text-[var(--accent)]">Healthcare</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">Our Story</a>
+          <a href="departments.html" class="nav-link active">Specialties</a>
+          <a href="doctors.html" class="nav-link">Find a Doctor</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+          <a href="appointment.html" class="btn-primary ml-4">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Book Visit</span>
+          </a>
+        </nav>
+
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger text-white" id="hamburger-btn">
+          <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Overlay -->
+      <nav class="mobile-nav" id="mobile-menu">
+        <button class="absolute top-8 right-8 text-slate-900" id="close-btn">
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">Our Story</a>
+        <a href="departments.html" class="nav-link">Specialties</a>
+        <a href="doctors.html" class="nav-link">Find a Doctor</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="appointment.html" class="btn-primary">Book Visit</a>
+      </nav>
+    </header>
+
+    <main class="pt-40 pb-20">
+      <div class="container mx-auto px-8">
+        <div id="content-area" class="reveal">
+          <!-- Generic Placeholder Content -->
+          <div class="max-w-4xl mx-auto text-center">
+            <h1
+              id="dept-title"
+              class="text-6xl font-black font-display text-slate-900 mb-8"
+            >
+              Department Overview
+            </h1>
+            <p
+              id="dept-desc"
+              class="text-xl text-slate-500 mb-12 leading-relaxed"
+            >
+              Select a department from the specialties page to view detailed
+              facilities, specialized equipment, and our elite medical team.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 text-left mb-20">
+              <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <i data-lucide="shield-check" class="text-blue-600"></i>
+                  Quality Assurance
+                </h3>
+                <p class="text-slate-500">
+                  Adhering to international JCI standards for patient safety and
+                  clinical excellence.
+                </p>
+              </div>
+              <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <i data-lucide="zap" class="text-teal-600"></i> Elite Tech
+                </h3>
+                <p class="text-slate-500">
+                  Utilizing the latest generation of medical robotics and
+                  diagnostic AI.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="departments.html"
+              class="text-blue-600 font-black text-lg flex items-center justify-center gap-2 hover:gap-4 transition-all"
+            >
+              <i data-lucide="arrow-left"></i> Back to All Specialties
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Professional Modern Footer -->
+    <footer
+      class="bg-slate-900 text-slate-300 pt-24 pb-12 relative overflow-hidden"
+    >
+      <!-- Decor Background -->
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 -skew-x-12 translate-x-1/2"
+      ></div>
+
+      <div class="container mx-auto px-8 relative z-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20"
+        >
+          <!-- Column 1: About -->
+          <div class="space-y-8 reveal">
+            <a href="index.html" class="flex items-center gap-2 group">
+              <div
+                class="bg-blue-600 p-2 rounded-lg shadow-lg shadow-blue-900/20 group-hover:rotate-12 transition-transform"
+              >
+                <i data-lucide="cross" class="text-white w-5 h-5"></i>
+              </div>
+              <span
+                class="text-xl font-extrabold font-display text-white tracking-tight"
+                >SYL<span class="text-blue-500">Healthcare</span></span
+              >
+            </a>
+            <p class="text-slate-400 leading-relaxed font-medium">
+              A global leader in medical excellence, combining cutting-edge
+              technology with compassionate care to provide elite healthcare
+              solutions for everyone.
+            </p>
+            <!-- Social Media Row -->
+            <div class="flex gap-4 pt-2">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all"
+              >
+                <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:-translate-y-1 transition-all"
+              >
+                <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-700 hover:-translate-y-1 transition-all"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="space-y-8 reveal delay-100">
+            <h4
+              class="text-white font-bold text-lg uppercase tracking-widest border-l-4 border-blue-600 pl-4"
+            >
+              Quick Links
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="doctors.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Our Doctors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="departments.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Specialties</a
+                >
+              </li>
+              <li>
+                <a
+                  href="appointment.html"
+                  class="hover:text-blue-500 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 text-blue-600"
+                  ></i>
+                  Appointments</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Support -->
+          <div class="space-y-8 reveal delay-200">
+            <h4
+              class="text-white font-bold text-lg uppercase tracking-widest border-l-4 border-teal-500 pl-4"
+            >
+              Support
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i data-lucide="shield" class="w-4 h-4 text-teal-500"></i>
+                  Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i data-lucide="file-text" class="w-4 h-4 text-teal-500"></i>
+                  Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="help-circle"
+                    class="w-4 h-4 text-teal-500"
+                  ></i>
+                  Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-teal-400 hover:translate-x-2 flex items-center gap-2 transition-all font-semibold"
+                  ><i
+                    data-lucide="phone-call"
+                    class="w-4 h-4 text-teal-500"
+                  ></i>
+                  Emergencies</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Us -->
+          <div class="space-y-8 reveal delay-300">
+            <h4
+              class="text-white font-bold text-lg uppercase tracking-widest border-l-4 border-orange-500 pl-4"
+            >
+              Contact Us
+            </h4>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500 transition-colors"
+                >
+                  <i
+                    data-lucide="map-pin"
+                    class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"
+                  ></i>
+                </div>
+                <p class="text-slate-400 font-medium leading-relaxed">
+                  123 Medical Drive, <br />
+                  Health City, HC 4022
+                </p>
+              </div>
+              <div class="flex items-start gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors"
+                >
+                  <i
+                    data-lucide="phone"
+                    class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors"
+                  ></i>
+                </div>
+                <p class="text-slate-400 font-medium tracking-tight">
+                  +1 (555) 000-1234 <br />
+                  <span class="text-xs text-slate-500 uppercase font-bold"
+                    >24/7 Support Line</span
+                  >
+                </p>
+              </div>
+              <div class="flex items-start gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center shrink-0 group-hover:bg-teal-600 transition-colors"
+                >
+                  <i
+                    data-lucide="mail"
+                    class="w-5 h-5 text-teal-600 group-hover:text-white transition-colors"
+                  ></i>
+                </div>
+                <p class="text-slate-400 font-medium whitespace-nowrap">
+                  contact@sylhealthcare.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <p class="text-slate-500 font-medium text-sm">
+            © 2025
+            <span class="text-blue-600 font-bold">SYL Healthcare</span>. All
+            rights reserved. Medical solutions for a better life.
+          </p>
+          <div class="flex gap-8 text-sm font-bold text-slate-500">
+            <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+            <a href="#" class="hover:text-white transition-colors"
+              >Accessibility</a
+            >
+            <a href="#" class="hover:text-white transition-colors">Careers</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+      lucide.createIcons();
+
+      // Simple client-side routing logic for demonstration
+      const hash = window.location.hash.replace("#", "");
+      const titles = {
+        icu: "Critical Care (ICU)",
+        surgery: "Surgical Excellence",
+        pediatrics: "Pediatric Center",
+        emergency: "Emergency Center",
+        diagnostics: "Radio & Lab Services",
+        rehab: "Rehabilitation Ward",
+      };
+
+      if (hash && titles[hash]) {
+        document.getElementById("dept-title").innerText = titles[hash];
+        document.getElementById(
+          "dept-desc"
+        ).innerText = `Detailed clinical overview and facility tour for the ${titles[hash]} department at SYL Healthcare.`;
+      }
+    </script>
+  </body>
+</html>
