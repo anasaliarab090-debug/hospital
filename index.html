@@ -397,12 +397,11 @@
             <!-- Strip 1 -->
             <div 
               class="accordion-strip relative flex-1 overflow-hidden group cursor-pointer rounded-[10px] transition-all duration-[0.6s] ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:flex-[4]"
-              onmouseenter="handleBottomAccordionHover(this, true)"
-              onmouseleave="handleBottomAccordionHover(this, false)"
             >
               <video 
-                class="absolute inset-0 w-full h-full object-cover"
-                muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover hospital-video"
+                muted loop playsinline preload="auto"
+                poster="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
               >
                 <source src="hospital-video.mp4/hosp1.mp4/262188_small.mp4" type="video/mp4">
               </video>
@@ -415,12 +414,11 @@
             <!-- Strip 2 -->
             <div 
               class="accordion-strip relative flex-1 overflow-hidden group cursor-pointer rounded-[10px] transition-all duration-[0.6s] ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:flex-[4]"
-              onmouseenter="handleBottomAccordionHover(this, true)"
-              onmouseleave="handleBottomAccordionHover(this, false)"
             >
               <video 
-                class="absolute inset-0 w-full h-full object-cover"
-                muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover hospital-video"
+                muted loop playsinline preload="auto"
+                poster="https://images.unsplash.com/photo-1581595224492-38411d80af94?auto=format&fit=crop&q=80&w=800"
               >
                 <source src="hospital-video.mp4/hosp2.mp4 - Copy/3086864-uhd_3840_2160_30fps.mp4" type="video/mp4">
               </video>
@@ -433,12 +431,11 @@
             <!-- Strip 3 -->
             <div 
               class="accordion-strip relative flex-1 overflow-hidden group cursor-pointer rounded-[10px] transition-all duration-[0.6s] ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:flex-[4]"
-              onmouseenter="handleBottomAccordionHover(this, true)"
-              onmouseleave="handleBottomAccordionHover(this, false)"
             >
               <video 
-                class="absolute inset-0 w-full h-full object-cover"
-                muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover hospital-video"
+                muted loop playsinline preload="auto"
+                poster="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
               >
                 <source src="hospital-video.mp4/hosp3.mp4 - Copy (2)/3197808-hd_1920_1080_25fps.mp4" type="video/mp4">
               </video>
@@ -451,12 +448,11 @@
             <!-- Strip 4 -->
             <div 
               class="accordion-strip relative flex-1 overflow-hidden group cursor-pointer rounded-[10px] transition-all duration-[0.6s] ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:flex-[4]"
-              onmouseenter="handleBottomAccordionHover(this, true)"
-              onmouseleave="handleBottomAccordionHover(this, false)"
             >
               <video 
-                class="absolute inset-0 w-full h-full object-cover"
-                muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover hospital-video"
+                muted loop playsinline preload="auto"
+                poster="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
               >
                 <source src="hospital-video.mp4/hosp6.mp4/4206166-uhd_3840_2160_25fps.mp4" type="video/mp4">
               </video>
@@ -469,12 +465,11 @@
             <!-- Strip 5 -->
             <div 
               class="accordion-strip relative flex-1 overflow-hidden group cursor-pointer rounded-[10px] transition-all duration-[0.6s] ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:flex-[4]"
-              onmouseenter="handleBottomAccordionHover(this, true)"
-              onmouseleave="handleBottomAccordionHover(this, false)"
             >
               <video 
-                class="absolute inset-0 w-full h-full object-cover"
-                muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover hospital-video"
+                muted loop playsinline preload="auto"
+                poster="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=800"
               >
                 <source src="hospital-video.mp4/hosp5.mp4 - Copy (4)/5254563-uhd_3840_2160_30fps.mp4" type="video/mp4">
               </video>
@@ -487,15 +482,28 @@
         </div>
 
         <script>
-          function handleBottomAccordionHover(element, isHovered) {
-            const video = element.querySelector('video');
-            if (isHovered) {
-              video.play();
-            } else {
-              video.pause();
-              video.currentTime = 0;
-            }
-          }
+          document.addEventListener('DOMContentLoaded', () => {
+            const hospitalVideos = document.querySelectorAll('.hospital-video');
+            
+            hospitalVideos.forEach(video => {
+              const parent = video.closest('.accordion-strip');
+              
+              if (parent) {
+                parent.addEventListener('mouseenter', () => {
+                  const playPromise = video.play();
+                  if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                      console.log("Video play interrupted or failed:", error);
+                    });
+                  }
+                });
+                
+                parent.addEventListener('mouseleave', () => {
+                  video.pause();
+                });
+              }
+            });
+          });
         </script>
 
         <style>
